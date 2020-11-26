@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -41,15 +42,21 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <MenuButton minWidth="-Infinity" mnemonicParsing="false" text="Selecionar" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <MenuButton fx:id="Selecionar" minWidth="-Infinity" mnemonicParsing="false" text="Selecionar" GridPane.columnIndex="4" GridPane.rowIndex="2">
               <items>
-                <MenuItem mnemonicParsing="false" text="Atendente" />
-                <MenuItem mnemonicParsing="false" text="Prestador" />
-                  <MenuItem mnemonicParsing="false" text="Administrador" />
+                <MenuItem fx:id="BotaoAtendente" mnemonicParsing="false" onAction="#SelecionaAtendente" text="Atendente" />
+                <MenuItem fx:id="BotaoPrestador" mnemonicParsing="false" onAction="#SelecionaPrestador" text="Prestador" />
+                  <MenuItem fx:id="BotaoAdministracao" mnemonicParsing="false" onAction="#SelecionaAdminsitracao" text="Administrador" />
               </items>
             </MenuButton>
-            <Button minWidth="-Infinity" mnemonicParsing="false" text="Confirmar" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
-            <Button mnemonicParsing="false" text="Sair" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
+            <Button fx:id="BotaoConfirmar" minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaConfirmar" text="Confirmar" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin></Button>
+            <Button fx:id="BotaoSair" mnemonicParsing="false" onAction="#ClicaSair" text="Sair" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="TextCPF" minWidth="-Infinity" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label fx:id="LabelCpf" minWidth="-Infinity" text="CPF Prestador:" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="LabelAvisos" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
    </children>
