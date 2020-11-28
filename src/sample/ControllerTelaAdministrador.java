@@ -42,8 +42,37 @@ public class ControllerTelaAdministrador {
     @FXML
     public Label LabelAvisos;
 
+    @FXML
+    public CheckBox CheckClienteEmpresarial;
+
+    @FXML
+    public CheckBox CheckCliente;
+
     public void ClicaConfirmar(){
-        if ()
+        if (Servicos.getText().equals("Servicos")){
+            LabelAvisos.setText("Selecione um servico.");
+        }
+        if (Servicos.getText().equals("Cadastrar Prestador")){
+            Main.changeScreen("TelaCadastrarPrestador");
+        }
+        if(Servicos.getText().equals("Cadastrar Servico")){
+            Main.changeScreen("TelaCadastrarServico");
+        }
+        if(Servicos.getText().equals("Cadastrar Cliente")){
+            Main.changeScreen("TelaCadastrarCliente");
+        }
+        if(Servicos.getText().equals("Cadastrar Contrato")){
+            Main.changeScreen("TelaCadastrarContrato");
+        }
+        if (Servicos.getText().equals("Consultar Prestadores Cadastrados")){
+            Main.changeScreen("TelaMostraPrestadores");
+        }
+        if (Servicos.getText().equals("Consultar Clientes Cadastrados")){
+            Main.changeScreen("TelaConsultaClientes");
+        }
+        if (Servicos.getText().equals("Consultar Servicos Cadastrados")){
+            Main.changeScreen("TelaConsultaServicos");
+        }
 
     }
 
@@ -60,7 +89,7 @@ public class ControllerTelaAdministrador {
     // MenuButton Itens
 
     public void ConsultarClientes(){
-        Servicos.setText("Consultar clientes cadastrados");
+        Servicos.setText("Consultar Clientes Cadastrados");
     }
 
     public void ConsultarPrestadores(){
@@ -84,7 +113,7 @@ public class ControllerTelaAdministrador {
     }
 
     public void CadastrarContrato(){
-        Servicos.setText("Cadastrar contrato");
+        Servicos.setText("Cadastrar Contrato");
     }
 
     public void ConfirmarPagamento(){

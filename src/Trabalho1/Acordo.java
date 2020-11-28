@@ -2,7 +2,7 @@ package Trabalho1;
 
 public abstract class Acordo {
 
-    protected double valor;
+    public double valor;
     protected String observacao;
     private Prestador prestador;
 

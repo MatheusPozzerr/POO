@@ -51,26 +51,32 @@ public class Controller {
             LabelAvisos.setTextFill(Color.FIREBRICK);
         }
         if (Selecionar.getText().equals("Prestador")) {
-            cpf = TextCPF.getText();
-            if (!VerificaDigitosCpfOuCnpj(cpf) || cpf.length()!=11) {
-                LabelAvisos.setText("Erro: Cpf Invalido");
-                LabelAvisos.setTextFill(Color.FIREBRICK);
-            } else {
-                verificacpf = false;
-                if(portifolio!=null) {
-                    for (Prestador prestadore : portifolio.getPrestadores()) {
-                        if (cpf.equals("12345678901")) {
-                            Main.changeScreen("SegundaTela");
+            if(TextCPF.getText()!= null) {
+                cpf = TextCPF.getText();
+                if (!VerificaDigitosCpfOuCnpj(cpf) || cpf.length() != 11) {
+                    LabelAvisos.setText("Erro: Cpf Invalido");
+                    LabelAvisos.setTextFill(Color.FIREBRICK);
+                } else {
+                    verificacpf = false;
+                    if (portifolio != null) {
+                        for (Prestador prestadore : portifolio.getPrestadores()) {
+                            if (cpf.equals(prestadore.getCpf())) {
+                                Main.changeScreen("TelaAdministrador");
+                                verificacpf = false;
+                                break;
+                            }
                             verificacpf = false;
-                            break;
                         }
-                        verificacpf = false;
+                    }
+                    if (verificacpf == false) {
+                        LabelAvisos.setText("Erro: Cpf não cadastrado.");
+                        LabelAvisos.setTextFill(Color.FIREBRICK);
                     }
                 }
-                if (verificacpf==false) {
-                    LabelAvisos.setText("Erro: Cpf não cadastrado.");
-                    LabelAvisos.setTextFill(Color.FIREBRICK);
-                }
+            }
+            else {
+                LabelAvisos.setText("Preencha todos os campos.");
+                LabelAvisos.setTextFill(Color.FIREBRICK);
             }
         }
         if (Selecionar.getText().equals("Atendente")){
