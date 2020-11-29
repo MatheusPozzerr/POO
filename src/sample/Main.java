@@ -14,6 +14,8 @@ public class Main extends Application {
     public static Stage stage;
     public static Scene TelaInicial;
     public static Scene TelaAdiministrador;
+    public static Scene TelaPrestador;
+    public static Scene TelaAtendente;
     public static Scene TelaCadastrarPrestador;
     public static Scene TelaCadastrarServico;
     public static Scene TelaCadastrarCliente;
@@ -22,7 +24,11 @@ public class Main extends Application {
     public static Scene TelaConsultaClientes;
     public static Scene TelaConsultaServicos;
     public static Scene TelaConfirmarPagamento;
+    public static Scene TelaConfirmarCancelarContrato;
+    public static Scene TelaPrestadorConfirmarCancelarContrato;
+    public static Scene TelaConsultaContratos;
 
+    int valor =0;
     public static Portifolio portifolio=new Portifolio();
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -93,6 +99,12 @@ public class Main extends Application {
         Parent fxmlSegunda = FXMLLoader.load(getClass().getResource("TelaAdministrador.fxml"));
         TelaAdiministrador = new Scene (fxmlSegunda,500,345);
 
+        Parent fxmlTelaPrestador= FXMLLoader.load(getClass().getResource("TelaPrestador.fxml"));
+        TelaPrestador = new Scene (fxmlTelaPrestador,500,345);
+
+        Parent fxmlTelaAtendente = FXMLLoader.load(getClass().getResource("TelaAtendente.fxml"));
+        TelaAtendente = new Scene (fxmlTelaAtendente,500,345);
+
         Parent fxmlCadastroPrestador = FXMLLoader.load(getClass().getResource("TelaCadastrarPrestadores.fxml"));
         TelaCadastrarPrestador = new Scene(fxmlCadastroPrestador,640,480);
 
@@ -117,6 +129,15 @@ public class Main extends Application {
         Parent fxmlConfirmarPagamento = FXMLLoader.load(getClass().getResource("TelaConfirmarPagamento.fxml"));
         TelaConfirmarPagamento = new Scene(fxmlConfirmarPagamento,640,480);
 
+        Parent fxmlConfirmarCancelarContrato = FXMLLoader.load(getClass().getResource("TelaConfirmarCancelarContrato.fxml"));
+        TelaConfirmarCancelarContrato = new Scene(fxmlConfirmarCancelarContrato,640,480);
+
+        Parent fxmlPrestadorConfirmarCancelarContrato = FXMLLoader.load(getClass().getResource("TelaPrestadorConfirmarCancelarContrato.fxml"));
+        TelaPrestadorConfirmarCancelarContrato=new Scene(fxmlPrestadorConfirmarCancelarContrato,640,480);
+
+        Parent fxmlConsultarContrato= FXMLLoader.load(getClass().getResource("TelaConsultarContratos.fxml"));
+        TelaConsultaContratos=new Scene(fxmlConsultarContrato,640,480);
+
         primaryStage.setScene(TelaInicial);
         primaryStage.show();
     }
@@ -128,6 +149,12 @@ public class Main extends Application {
                 break;
             case "TelaAdministrador":
                 stage.setScene(TelaAdiministrador);
+                break;
+            case"TelaPrestador":
+                stage.setScene(TelaPrestador);
+                break;
+            case"TelaAtendente":
+                stage.setScene(TelaAtendente);
                 break;
             case "TelaCadastrarPrestador":
                 stage.setScene(TelaCadastrarPrestador);
@@ -152,6 +179,15 @@ public class Main extends Application {
                 break;
             case"TelaConfirmarPagamento":
                 stage.setScene(TelaConfirmarPagamento);
+                break;
+            case"TelaConfirmarCancelarContrato":
+                stage.setScene(TelaConfirmarCancelarContrato);
+                break;
+            case"TelaPrestadorConfirmarCancelarContrato":
+                stage.setScene(TelaPrestadorConfirmarCancelarContrato);
+                break;
+            case"TelaConsultarContratos":
+                stage.setScene(TelaConsultaContratos);
                 break;
         }
 

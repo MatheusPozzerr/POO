@@ -11,6 +11,7 @@ public class ContollerMostraPrestadores {
     Label labelTexto;
 
     public void ClicaVoltar(){
+        labelTexto.setText("");
         Main.changeScreen("TelaAdministrador");
     }
 

@@ -61,7 +61,7 @@ public class Controller {
                     if (portifolio != null) {
                         for (Prestador prestadore : portifolio.getPrestadores()) {
                             if (cpf.equals(prestadore.getCpf())) {
-                                Main.changeScreen("TelaAdministrador");
+                                Main.changeScreen("TelaPrestador");
                                 verificacpf = false;
                                 break;
                             }
@@ -80,7 +80,7 @@ public class Controller {
             }
         }
         if (Selecionar.getText().equals("Atendente")){
-            Main.changeScreen("SegundaTela");
+            Main.changeScreen("TelaAtendente");
         }
 
         if (Selecionar.getText().equals("Administrador")){

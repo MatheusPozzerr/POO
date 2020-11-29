@@ -3,12 +3,8 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import java.util.ArrayList;
+
+
 import Trabalho1.*;
 
 public class ControllerTelaAdministrador {
@@ -34,19 +30,7 @@ public class ControllerTelaAdministrador {
     public MenuButton Servicos;
 
     @FXML
-    public MenuItem ItemConsultarClientes;
-
-    @FXML
-    public MenuItem ItemPrestadoresCadastrados;
-
-    @FXML
     public Label LabelAvisos;
-
-    @FXML
-    public CheckBox CheckClienteEmpresarial;
-
-    @FXML
-    public CheckBox CheckCliente;
 
     public void ClicaConfirmar(){
         if (Servicos.getText().equals("Servicos")){
@@ -73,6 +57,18 @@ public class ControllerTelaAdministrador {
         if (Servicos.getText().equals("Consultar Servicos Cadastrados")){
             Main.changeScreen("TelaConsultaServicos");
         }
+        if (Servicos.getText().equals("Confirmar Pagamento")){
+            Main.changeScreen("TelaConfirmarPagamento");
+        }
+        if (Servicos.getText().equals("Confirmar ou Cancelar Servico")){
+            Main.changeScreen("TelaConfirmarCancelarServico");
+        }
+        if (Servicos.getText().equals("Confirmar ou Cancelar Contrato")){
+            Main.changeScreen("TelaConfirmarCancelarContrato");
+        }
+        if (Servicos.getText().equals("Consultar Contratos")){
+            Main.changeScreen("TelaConsultarContratos");
+        }
 
     }
 
@@ -83,8 +79,6 @@ public class ControllerTelaAdministrador {
     public void ClicaVoltar(){
     Main.changeScreen("TelaInicial");
     }
-
-
 
     // MenuButton Itens
 
@@ -125,7 +119,7 @@ public class ControllerTelaAdministrador {
     }
 
     public void ConfirmarCancelarServico(){
-        Servicos.setText("Confirmar ou Cancelar Servico");
+        Servicos.setText("Confirmar ou Cancelar Contrato");
     }
 
     public void ConfirmarTermino(){
@@ -134,5 +128,6 @@ public class ControllerTelaAdministrador {
     public void Simulacao(){
         Servicos.setText("Realizar Simulacao");
     }
+
 
 }

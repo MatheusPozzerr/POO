@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.ControllerTelaAtendente"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerTelaAtendente">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label minWidth="-Infinity" text="Tela Atendente" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="40.0" />
+         </GridPane.margin>
+      </Label>
+      <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaConfirmar" text="Confirmar" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+      <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaVoltar" text="Voltar" GridPane.columnIndex="6" GridPane.rowIndex="7">
+         <GridPane.margin>
+            <Insets left="10.0" />
+         </GridPane.margin>
+      </Button>
+      <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaSair" text="Sair" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+      <Label minWidth="-Infinity" text="Selecione o servico que deseja;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <MenuButton fx:id="Servicos" minWidth="-Infinity" mnemonicParsing="false" text="Selecionar" GridPane.columnIndex="5" GridPane.rowIndex="3">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#CadastrarCliente" text="Cadastrar Cliente" />
+          <MenuItem mnemonicParsing="false" onAction="#CadastrarContrato" text="Cadastrar Contrato" />
+            <MenuItem mnemonicParsing="false" onAction="#CadastrarPrestador" text="Cadastrar Prestador" />
+            <MenuItem mnemonicParsing="false" onAction="#CadastrarServico" text="Cadastrar Servico" />
+            <MenuItem mnemonicParsing="false" onAction="#ConsultarContratos" text="Consultar Contratos Cadastrados" />
+            <MenuItem mnemonicParsing="false" onAction="#ConfirmarPagamento" text="Confirmar Pagamento" />
+        </items>
+      </MenuButton>
+      <Label fx:id="LabelAvisos" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+   </children>
+</GridPane>

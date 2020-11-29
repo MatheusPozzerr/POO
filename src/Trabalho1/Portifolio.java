@@ -1,5 +1,7 @@
 package Trabalho1;
 
+import sample.Main;
+
 import java.util.ArrayList;
 
 public class Portifolio {
@@ -189,13 +191,15 @@ public class Portifolio {
         return null;
     }
 
-    public void consultarContratos() {
-        System.out.println("Contratos cadastrados:");
+    public String consultarContratos() {
+
+        StringBuilder sb = new StringBuilder();
+        int num = 1;
         for (Contrato contrato : contratos) {
-            System.out.println(contrato.toString());
-            System.out.println(contrato.getCliente().toString());
-            System.out.println(contrato.getPrestador().toString() + "\n");
+            sb.append(num+contrato.toString() +"\n");
+            num++;
         }
+        return sb.toString();
     }
 
     public void consultarClientes() {

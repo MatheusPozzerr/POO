@@ -35,7 +35,7 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label minWidth="-Infinity" text="Consulta Clientes" GridPane.columnIndex="3" GridPane.rowIndex="2">
+      <Label minWidth="-Infinity" text="Consulta Clientes Cadastrados" GridPane.columnIndex="3" GridPane.rowIndex="2">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -43,11 +43,11 @@
             <Insets left="60.0" />
          </GridPane.margin>
       </Label>
-      <Label fx:id="labelTexto" minHeight="-Infinity" minWidth="-Infinity" GridPane.rowIndex="4">
+      <Label fx:id="labelTexto" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="0.0" GridPane.rowIndex="6">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin></Label>
       <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaVoltar" text="Voltar" GridPane.columnIndex="8" GridPane.rowIndex="14" />
-      <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaMostrar" text="Mostrar" GridPane.columnIndex="7" GridPane.rowIndex="14" />
+      <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaMostrar" text="Consultar" GridPane.columnIndex="7" GridPane.rowIndex="14" />
    </children>
 </GridPane>

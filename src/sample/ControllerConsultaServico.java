@@ -11,6 +11,7 @@ public class ControllerConsultaServico {
     Label labelTexto;
 
     public void ClicaVoltar(){
+        labelTexto.setText("");
         Main.changeScreen("TelaAdministrador");
     }
 

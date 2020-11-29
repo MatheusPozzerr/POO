@@ -91,7 +91,6 @@ public class ControllerCadastrarCliente {
     }
 
     public void clicaConfirmar(){
-
         if(Selecionar.getText().equals("Cliente Individual")) {
             if(nomeTextField.getText()!= null && enderecoTextField.getText()!= null && cpfTextField.getText() != null && telefoneTextField !=null && emailTextField != null) {
                 boolean verificacpf = true;
@@ -146,7 +145,8 @@ public class ControllerCadastrarCliente {
                 if (!VerificaDigitosCpfOuCnpj(cnpj) || cnpj.length() != 14) {
                     LabelAvisos.setText("Erro: Cnpj Invalido");
                     LabelAvisos.setTextFill(Color.FIREBRICK);
-                } else {
+                }
+                else {
                     cnpj = cpfTextField.getText();
 
                     try {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -33,12 +34,15 @@
   </rowConstraints>
    <children>
       <Button fx:id="ClicaVoltar" mnemonicParsing="false" onAction="#ClicaVoltar" text="Voltar" GridPane.columnIndex="7" GridPane.rowIndex="12" />
-      <Label minWidth="-Infinity" text="Prestadores Cadastrados" GridPane.columnIndex="2" GridPane.rowIndex="1">
+      <Label minWidth="-Infinity" text="Consulta Prestadores Cadastrados" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <font>
-            <Font size="24.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
       </Label>
-      <Label fx:id="labelTexto" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Button fx:id="ClicaMostrar" minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaMostrar" text="Mostrar" GridPane.columnIndex="6" GridPane.rowIndex="12" />
+      <Label fx:id="labelTexto" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Button fx:id="ClicaMostrar" minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaMostrar" text="Consultar" GridPane.columnIndex="6" GridPane.rowIndex="12" />
    </children>
 </GridPane>

@@ -1,8 +1,5 @@
 package sample;
 
-import Trabalho1.Cliente;
-import Trabalho1.ClienteEmpresarial;
-import Trabalho1.ClienteIndividual;
 import Trabalho1.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,7 +18,7 @@ public class ControllerCadastrarContrato {
     ArrayList<Servico> Catalogo;
     private ObservableList<Servico> obsServicos;
 
-    private List<Servico> listaServicos = new ArrayList<>();
+    private final List<Servico> listaServicos = new ArrayList<>();
     @FXML
     public ComboBox<Servico> servicos;
     @FXML
@@ -138,6 +135,7 @@ public class ControllerCadastrarContrato {
                                 novoContrato.setCliente(portifolio.buscaCpfCliente(cpf));
                                 novoContrato.setPrestador(servicoEscolhido.getPrestador());
                                 novoContrato.setServico(servicoEscolhido);
+                                novoContrato.setQtdDesconto(desconto);
                                 portifolio.buscaCpfCliente(cpf).adicionaContrato(novoContrato);
                                 portifolio.adicionaContrato(novoContrato, servicoEscolhido, cpf);
                                 LabelAvisos.setText("Contrato cadastrado: " + novoContrato.toString());
@@ -189,10 +187,11 @@ public class ControllerCadastrarContrato {
                         if (verificacpf && verificaDesconto && verificaData) {
                             desconto = Integer.parseInt(descontoTextField.getText());
                             desconto=desconto+7;
-                            if (desconto < 0 || desconto > 100) {
+                            if (desconto < 7 || desconto > 100) {
                                 LabelAvisos.setText("Erro: Desconto invalido");
                                 LabelAvisos.setTextFill(Color.FIREBRICK);
-                            } else {
+                            }
+                            else {
                                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
                                 LocalDate data = dataTextField.getValue();
                                 LocalDateTime dataServico = LocalDateTime.parse(data.toString() + " 23:59", formatter);
@@ -200,7 +199,7 @@ public class ControllerCadastrarContrato {
                                 Servico servicoEscolhido = servicos.getValue();
                                 double valorInicial = servicoEscolhido.getValor();
                                 double quantidadeDeDesconto = 0;
-                                if (desconto > 7) {
+                                if (desconto >= 7) {
                                     quantidadeDeDesconto = (valorInicial * desconto) / 100;
                                 }
                                 double valorFinal = valorInicial - quantidadeDeDesconto;
@@ -209,6 +208,7 @@ public class ControllerCadastrarContrato {
                                 novoContrato.setCliente(portifolio.buscaCnpjCliente(cnpj));
                                 novoContrato.setPrestador(servicoEscolhido.getPrestador());
                                 novoContrato.setServico(servicoEscolhido);
+                                novoContrato.setQtdDesconto(desconto);
                                 portifolio.buscaCnpjCliente(cnpj).adicionaContrato(novoContrato);
                                 portifolio.adicionaContrato(novoContrato, servicoEscolhido, cnpj);
                                 LabelAvisos.setText("Contrato cadastrado: " + novoContrato.toString());
