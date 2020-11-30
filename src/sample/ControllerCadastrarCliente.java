@@ -124,7 +124,7 @@ public class ControllerCadastrarCliente {
                         String email = emailTextField.getText();
                         Cliente cliente = new ClienteIndividual(nome, telefone, email, endereco, cpf);
                         portifolio.adicionaClienteIndividual(cliente);
-                        LabelAvisos.setText("Servico cadastrado: " + cliente.toString());
+                        LabelAvisos.setText("Cliente cadastrado: " + cliente.toString());
                     }
                 }
             }
@@ -136,7 +136,7 @@ public class ControllerCadastrarCliente {
 
         if(Selecionar.getText().equals("Cliente Empresarial")) {
             if(nomeTextField.getText()!= null && enderecoTextField.getText()!= null && cpfTextField.getText() != null && telefoneTextField !=null && emailTextField != null && nomeFantasiaTextField!=null) {
-                boolean verificacpf = false;
+                boolean verificacpf = true;
                 boolean verificaTelefone = true;
                 String cnpj = cpfTextField.getText();
                 String nome = nomeTextField.getText();
@@ -157,19 +157,21 @@ public class ControllerCadastrarCliente {
                         LabelAvisos.setText("Erro: Telefone invalido");
                         LabelAvisos.setTextFill(Color.FIREBRICK);
                     }
-                    if (portifolio.getClientesIndividuais() != null) {
+                    if (portifolio.getClientesEmpresariais() != null) {
                         if (portifolio.verificaCnpjCliente(cnpj)) {
-                            verificacpf = true;
-                            LabelAvisos.setText("Erro: CPF ja cadastrado.");
-                            LabelAvisos.setTextFill(Color.FIREBRICK);
+                            verificacpf = false;
                         }
+                    }
+                    else {
+                        LabelAvisos.setText("Erro: Cnpj ja cadastrado.");
+                        LabelAvisos.setTextFill(Color.FIREBRICK);
                     }
                     if (verificacpf && verificaTelefone) {
                         int telefone = Integer.parseInt(telefoneTextField.getText());
                         String email = emailTextField.getText();
                         ClienteEmpresarial cliente = new ClienteEmpresarial(nomeFantasia, nome, telefone, email, endereco, cnpj);
                         portifolio.adicionaClienteEmpresarial(cliente);
-                        LabelAvisos.setText("Servico cadastrado: " + cliente.toString());
+                        LabelAvisos.setText("Cliente cadastrado: " + cliente.toString());
                     }
                 }
             }
