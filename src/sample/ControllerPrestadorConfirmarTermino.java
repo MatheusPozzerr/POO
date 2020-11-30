@@ -35,6 +35,7 @@ public class ControllerPrestadorConfirmarTermino {
     private List<Contrato> contratos = new ArrayList<>();
 
     public void ClicaVoltar(){
+        LabelAvisos.setText("");
         Main.changeScreen("TelaPrestador");
     }
 

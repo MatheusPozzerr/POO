@@ -49,6 +49,7 @@ public class ControllerTerminoContrato implements Initializable {
 
 
     public void ClicaVoltar(){
+        LabelTexto.setText("");
         Main.changeScreen("TelaAdministrador");
     }
 

@@ -31,6 +31,7 @@ public class ControllerCadastrarPrestadores {
 
     @FXML
     public void ClicaVoltar(){
+        labelErros.setText("");
         if(Main.usuario.equals(Main.login.usr_admin)) {
             Main.changeScreen("TelaAdministrador");
         } else if(Main.usuario.equals(Main.login.usr_atendente)){
