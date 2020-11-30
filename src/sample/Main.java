@@ -31,14 +31,13 @@ public class Main extends Application {
     public static Scene TelaPrestadorConsultaContratos;
     public static Scene TelaPrestadorrrConfirmarTermino;
 
-
+	// Variavel estatica, usada em toda a aplicacao
     public static enum login {
         usr_atendente,
         usr_prestador,
         usr_admin,
         usr_deslogado;
     }
-
     public static login usuario = login.usr_deslogado;
 
     public static Portifolio portifolio=new Portifolio();
