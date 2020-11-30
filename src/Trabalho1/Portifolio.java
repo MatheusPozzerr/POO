@@ -196,7 +196,7 @@ public class Portifolio {
         StringBuilder sb = new StringBuilder();
         int num = 1;
         for (Contrato contrato : contratos) {
-            sb.append(num+contrato.toString() +"\n");
+            sb.append(num+"."+contrato.toString() +"\n");
             num++;
         }
         return sb.toString();

@@ -76,5 +76,7 @@
       <Label fx:id="labelServicos" minHeight="-Infinity" minWidth="-Infinity" GridPane.rowIndex="9" />
       <Label minWidth="-Infinity" text="Servico(Numero):" GridPane.columnIndex="3" GridPane.rowIndex="9" />
       <ComboBox fx:id="servicos" minWidth="-Infinity" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+      <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#Atualiza" text="Atualizar Servicos" GridPane.columnIndex="8" GridPane.rowIndex="9" />
    </children>
 </GridPane>

@@ -27,8 +27,10 @@ public class Main extends Application {
     public static Scene TelaConfirmarCancelarContrato;
     public static Scene TelaPrestadorConfirmarCancelarContrato;
     public static Scene TelaConsultaContratos;
+    public static Scene TelaTerminoContrato;
+    public static Scene TelaPrestadorConsultaContratos;
+    public static Scene TelaPrestadorrrConfirmarTermino;
 
-    int valor =0;
     public static Portifolio portifolio=new Portifolio();
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -138,6 +140,15 @@ public class Main extends Application {
         Parent fxmlConsultarContrato= FXMLLoader.load(getClass().getResource("TelaConsultarContratos.fxml"));
         TelaConsultaContratos=new Scene(fxmlConsultarContrato,640,480);
 
+        Parent fxmlConfirmarTermino= FXMLLoader.load(getClass().getResource("TelaConfirmaTermino.fxml"));
+        TelaTerminoContrato =new Scene(fxmlConfirmarTermino,640,480);
+
+        Parent fxmlPrestadorConsultaContratos= FXMLLoader.load(getClass().getResource("TelaPrestadoresConsultarContratos.fxml"));
+        TelaPrestadorConsultaContratos =new Scene(fxmlPrestadorConsultaContratos,640,480);
+
+        Parent fxmlPrestadorConfirmarTermino= FXMLLoader.load(getClass().getResource("TelaPrestadorConfirmarTermino.fxml"));
+        TelaPrestadorrrConfirmarTermino =new Scene(fxmlPrestadorConfirmarTermino,640,480);
+
         primaryStage.setScene(TelaInicial);
         primaryStage.show();
     }
@@ -189,6 +200,14 @@ public class Main extends Application {
             case"TelaConsultarContratos":
                 stage.setScene(TelaConsultaContratos);
                 break;
+            case"TelaConfirmarTermino":
+                stage.setScene(TelaTerminoContrato);
+                break;
+            case "TelaPrestadorConsultaContratos":
+                stage.setScene(TelaPrestadorConsultaContratos);
+                break;
+            case "TelaPrestadorConfirmarTermino":
+                stage.setScene(TelaPrestadorrrConfirmarTermino);
         }
 
     }

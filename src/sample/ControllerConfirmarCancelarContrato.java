@@ -53,6 +53,19 @@ public class ControllerConfirmarCancelarContrato implements Initializable{
         Main.changeScreen("TelaAdministrador");
     }
 
+    public void Atualiza(){
+        try{
+            contratos = portifolio.getContratosContratados();
+            obsContrato = FXCollections.observableArrayList(contratos);
+            contrato.setItems(obsContrato);
+        }
+        catch(Exception e){
+            System.err.format("Erro: %s%n", e);
+            LabelAvisos.setText("Nao ha contratos a serem confirmados");
+            LabelAvisos.setTextFill(Color.FIREBRICK);
+        }
+    }
+
     public void ClicaConfirmar() {
         boolean verificaDesconto=true;
         if (descontoTextField != null && contrato.getValue()!=null) {
@@ -77,6 +90,9 @@ public class ControllerConfirmarCancelarContrato implements Initializable{
                     contrato.getValue().getPrestador().removeServicoContratadoAdicionaConfirmado(contrato.getValue());
                     LabelAvisos.setText("Contrato confirmado: "+ contrato.getValue().toString());
                     portifolio.removeContratoContratados(contrato.getValue());
+                    contratos = portifolio.getContratosContratados();
+                    obsContrato = FXCollections.observableArrayList(contratos);
+                    contrato.setItems(obsContrato);
                 }
                 else {
                     LabelAvisos.setText("Erro: Desconto invalido");

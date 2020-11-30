@@ -62,5 +62,6 @@
             <Insets left="12.0" />
          </GridPane.margin></Label>
       <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaCancelar" text="Cancelar" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+      <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#Atualiza" text="Atualizar Contratos" GridPane.columnIndex="6" GridPane.rowIndex="4" />
    </children>
 </GridPane>

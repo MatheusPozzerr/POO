@@ -69,6 +69,9 @@ public class ControllerTelaAdministrador {
         if (Servicos.getText().equals("Consultar Contratos")){
             Main.changeScreen("TelaConsultarContratos");
         }
+        if (Servicos.getText().equals("Confirmar Termino de Servico")){
+            Main.changeScreen("TelaConfirmarTermino");
+        }
 
     }
 

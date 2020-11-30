@@ -69,6 +69,16 @@ public class ControllerCadastrarContrato {
         servicos.setItems(obsServicos);
     }
 
+    public void Atualiza(){
+        try{
+            Catalogo=portifolio.getServicos();
+            obsServicos = FXCollections.observableArrayList(Catalogo);
+            servicos.setItems(obsServicos);
+        }
+        catch(Exception e){
+        }
+    }
+
     public void clicaConfirmar(){
         if (Selecionar.getText().equals("Selecionar")){
             LabelAvisos.setText("Selecione um tipo de Cliente");

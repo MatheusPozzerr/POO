@@ -43,6 +43,54 @@ public class ControllerConfirmarPagamento {
         labelCpf.setText("Cpf:");
     }
 
+    public void Atualiza() {
+        if (Selecionar.getText().equals("Cliente Individual")) {
+            if (cpfTextField.getText() != null) {
+                String cpf = cpfTextField.getText();
+                if (!VerificaDigitosCpfOuCnpj(cpf) || cpf.length() != 11) {
+                    LabelAvisos.setText("Erro: Cpf Invalido");
+                    LabelAvisos.setTextFill(Color.FIREBRICK);
+                } else {
+                    if (portifolio.verificaCpfCliente(cpf)) {
+                        contrato.setDisable(false);
+                        labelServicos.setDisable(false);
+                        try {
+                            contratos = portifolio.buscaCpfCliente(cpf).getContratosTerminado();
+                            obsContrato = FXCollections.observableArrayList(contratos);
+                            contrato.setItems(obsContrato);
+                        } catch (Exception e) {
+                            LabelAvisos.setText("Cliente nao possui contratos terminados");
+                            LabelAvisos.setTextFill(Color.FIREBRICK);
+                        }
+                    }
+                }
+            }
+        }
+        if (Selecionar.getText().equals("Cliente Empresarial")) {
+            if (cpfTextField.getText() != null) {
+                String cnpj = cpfTextField.getText();
+                if (!VerificaDigitosCpfOuCnpj(cnpj) || cnpj.length() != 14) {
+                    LabelAvisos.setText("Erro: Cnpj Invalido");
+                    LabelAvisos.setTextFill(Color.FIREBRICK);
+                } else {
+                    if (portifolio.verificaCnpjCliente(cnpj)) {
+                        contrato.setDisable(false);
+                        labelServicos.setDisable(false);
+                        try {
+                            contratos = portifolio.buscaCnpjCliente(cnpj).getContratosTerminado();
+                            obsContrato = FXCollections.observableArrayList(contratos);
+                            contrato.setItems(obsContrato);
+                        } catch (Exception e) {
+                            LabelAvisos.setText("Cliente nao possui contratos terminados");
+                            LabelAvisos.setTextFill(Color.FIREBRICK);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
     public void ClicaVerifica(){
         if (Selecionar.getText().equals("Cliente Individual")) {
             if (cpfTextField.getText() != null) {
@@ -143,7 +191,7 @@ public class ControllerConfirmarPagamento {
                     LabelAvisos.setTextFill(Color.FIREBRICK);
                 }
                 else {
-                    portifolio.buscaCpfCliente(cnpj).removeContratoTerminado(contrato.getValue());
+                    portifolio.buscaCnpjCliente(cnpj).removeContratoTerminado(contrato.getValue());
                     LabelAvisos.setText("Confirmado pagamento do contrato: " + contrato.getValue().toString());
                 }
             }

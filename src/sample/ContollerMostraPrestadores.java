@@ -15,15 +15,20 @@ public class ContollerMostraPrestadores {
         Main.changeScreen("TelaAdministrador");
     }
 
-    public void ClicaMostrar(){
-        ArrayList<Prestador> prestadores;
-        prestadores=Main.portifolio.getPrestadores();
-        StringBuilder sb = new StringBuilder();
-        int num=1;
-        for (Prestador prestadore : prestadores) {
-            sb.append(num + "." + prestadore.toString() + "\n");
-            num++;
+    public void ClicaMostrar() {
+        try {
+            ArrayList<Prestador> prestadores;
+            prestadores = Main.portifolio.getPrestadores();
+            StringBuilder sb = new StringBuilder();
+            int num = 1;
+            for (Prestador prestadore : prestadores) {
+                sb.append(num + "." + prestadore.toString() + "\n");
+                num++;
+            }
+            labelTexto.setText(sb.toString());
         }
-        labelTexto.setText(sb.toString());
+        catch (Exception e){
+
+        }
     }
 }

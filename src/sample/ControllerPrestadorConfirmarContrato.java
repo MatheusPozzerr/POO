@@ -122,6 +122,9 @@ public class ControllerPrestadorConfirmarContrato implements Initializable {
                 contrato.getValue().getCliente().removeContratoCancelando(contrato.getValue());
                 contrato.getValue().getPrestador().removeServicoContratado(contrato.getValue());
                 portifolio.removeContratoContratadosCancelando(contrato.getValue());
+                contratos = portifolio.buscaCpfPrestador(cpf).getServicosContratados();
+                obsContrato = FXCollections.observableArrayList(contratos);
+                contrato.setItems(obsContrato);
                 button.setDisable(true);
                 buttonCancelar.setDisable(true);
             } else {
@@ -143,7 +146,7 @@ public class ControllerPrestadorConfirmarContrato implements Initializable {
     }
 
     public void ClicaVerifica() {
-        boolean Verificando =true;
+        boolean Verificando =false;
             if (cpfTextField.getText() != null) {
                 String cpf = cpfTextField.getText();
                 if (!VerificaDigitosCpfOuCnpj(cpf) || cpf.length() != 11) {
@@ -151,6 +154,7 @@ public class ControllerPrestadorConfirmarContrato implements Initializable {
                     LabelAvisos.setTextFill(Color.FIREBRICK);
                 } else {
                     if (portifolio.verificaCpfPrestador(cpf)) {
+                        Verificando=true;
                         contrato.setDisable(false);
                         labelServicos.setDisable(false);
                         try {
@@ -196,6 +200,27 @@ public class ControllerPrestadorConfirmarContrato implements Initializable {
             LabelAvisos.setTextFill(Color.FIREBRICK);
         }
     }
+
+        public void Atualiza(){
+            if (cpfTextField.getText() != null) {
+                String cpf = cpfTextField.getText();
+                if (!VerificaDigitosCpfOuCnpj(cpf) || cpf.length() != 11) {
+                }
+                else {
+                    if (portifolio.verificaCpfPrestador(cpf)) {
+                        try {
+                            contratos = portifolio.buscaCpfPrestador(cpf).getServicosContratados();
+                            obsContrato = FXCollections.observableArrayList(contratos);
+                            contrato.setItems(obsContrato);
+                        } catch (Exception e) {
+                            System.err.format("Erro: %s%n", e);
+                            LabelAvisos.setText("Nao ha contratos a serem confirmados ou cancelados");
+                            LabelAvisos.setTextFill(Color.FIREBRICK);
+                        }
+                    }
+                }
+            }
+        }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

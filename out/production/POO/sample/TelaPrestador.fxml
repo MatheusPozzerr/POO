@@ -32,12 +32,13 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label minWidth="-Infinity" text="Escolha o servico que deseja:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-      <MenuButton fx:id="Servicos" minWidth="-Infinity" mnemonicParsing="false" text="Selecionar" GridPane.columnIndex="5" GridPane.rowIndex="3">
+      <Label minWidth="-Infinity" text="Escolha o servico que deseja:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <MenuButton fx:id="Servicos" minWidth="-Infinity" mnemonicParsing="false" text="Selecionar" GridPane.columnIndex="4" GridPane.rowIndex="3">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#ConsultarContratos" text="Consultar Servicos Contratados" />
           <MenuItem mnemonicParsing="false" onAction="#ConfirmarCancelarServico" text="Confirmar Ou Cancelar Contrato" />
             <MenuItem mnemonicParsing="false" onAction="#ConfirmarTermino" text="Confirmar Termino de Servico Contratado" />
+            <MenuItem mnemonicParsing="false" visible="false" />
         </items>
       </MenuButton>
       <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#ClicaVoltar" text="Voltar" GridPane.columnIndex="6" GridPane.rowIndex="7">

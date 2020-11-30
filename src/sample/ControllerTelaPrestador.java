@@ -40,8 +40,15 @@ public class ControllerTelaPrestador {
         if (Servicos.getText().equals("Confirmar ou Cancelar Contrato")){
             Main.changeScreen("TelaPrestadorConfirmarCancelarContrato");
         }
+        if (Servicos.getText().equals("Consultar Servicos Contratados")){
+            Main.changeScreen("TelaPrestadorConsultaContratos");
+        }
+       if (Servicos.getText().equals("Confirmar Termino de Servico")) {
+           Main.changeScreen("TelaPrestadorConfirmarTermino");
+       }
 
     }
+
 
     public void ClicaSair(){
         System.exit(0);
@@ -54,7 +61,7 @@ public class ControllerTelaPrestador {
     // MenuButton Itens
 
     public void ConsultarContratos(){
-        Servicos.setText("Consultar Contratos");
+        Servicos.setText("Consultar Servicos Contratados");
     }
 
     public void ConfirmarCancelarServico(){
