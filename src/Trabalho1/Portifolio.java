@@ -15,6 +15,7 @@ public class Portifolio {
     private ArrayList<Contrato> contratosContratados;
     private ArrayList<Contrato> ContratosCancelados;
     private ArrayList<Contrato> ContratosTerminados;
+    private ArrayList<Contrato> ContratosPagos;
 
     public Portifolio() {
         this.clientesEmpresariais = new ArrayList<>();
@@ -122,6 +123,15 @@ public class Portifolio {
             if (contrato.getDataEHora() == contratosConfirmado.get(i).getDataEHora()) {
                 ContratosTerminados.add(contratosConfirmado.get(i));
                 contratosConfirmado.remove(contratosConfirmado.get(i));
+            }
+        }
+    }
+
+    public void removeContratoTerminado(Contrato contrato) {
+        for (int i = 0; i < ContratosTerminados.size(); i++) {
+            if (contrato.getDataEHora() == ContratosTerminados.get(i).getDataEHora()) {
+                ContratosPagos.add(contratosConfirmado.get(i));
+                ContratosTerminados.remove(contratosConfirmado.get(i));
             }
         }
     }

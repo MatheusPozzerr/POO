@@ -199,6 +199,7 @@ public class ControllerConfirmarPagamento {
                 }
                 else {
                     portifolio.buscaCnpjCliente(cnpj).removeContratoTerminado(contrato.getValue());
+                    portifolio.removeContratoTerminado(contrato.getValue());
                     LabelAvisos.setText("Confirmado pagamento do contrato: " + contrato.getValue().toString());
                 }
             }

@@ -58,7 +58,7 @@ public class ControllerPrestadorConfirmarTermino {
                 contrato.getValue().getCliente().removeContratoConfirmados(contrato.getValue());
                 contrato.getValue().getPrestador().removeServicoConfirmado(contrato.getValue());
                 LabelAvisos.setText("Contrato terminado: " + contrato.getValue().toString());
-                portifolio.removeContratoContratados(contrato.getValue());
+                portifolio.removeContratoConfirmado(contrato.getValue());
                 button.setDisable(true);
                 contrato.setDisable(true);
                 labelServicos.setDisable(true);
