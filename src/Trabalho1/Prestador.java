@@ -16,7 +16,10 @@ public class Prestador extends Usuario {
     public Prestador(String nome, int telefone, String email, String cpf) {
         super(nome,telefone,email,cpf);
     }
-
+    @Override
+    public String toString() {
+        return "" + getCpf() + ";" + getNome() + ";" + getTelefone()+ ";" +getEmail() ;
+    }
 
     public boolean adicionaServico(Servico Servico) {
         for (Trabalho1.Servico servico : servicos) {

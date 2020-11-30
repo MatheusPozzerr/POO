@@ -1,5 +1,6 @@
 package sample;
 
+import Trabalho1.Arquivo;
 import Trabalho1.Portifolio;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,7 +10,7 @@ import javafx.scene.control.TextField;
 
 public class ControllerTelaAtendente {
     Portifolio portifolio= Main.portifolio;
-
+    Arquivo arquivo =Main.arquivo;
     @FXML
     public Label LabelCpf;
 
@@ -57,6 +58,8 @@ public class ControllerTelaAtendente {
     }
 
     public void ClicaSair(){
+
+        arquivo.salvaDados(portifolio);
         System.exit(0);
     }
 

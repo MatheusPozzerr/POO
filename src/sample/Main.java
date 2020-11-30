@@ -41,65 +41,12 @@ public class Main extends Application {
     public static login usuario = login.usr_deslogado;
 
     public static Portifolio portifolio=new Portifolio();
+    public static Arquivo arquivo=new Arquivo();
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Prestador prestador1 = new Prestador("Laura", 989054321, "laura@gmail.com", "12345678912", portifolio);
-        portifolio.adicionaPrestador(prestador1);
-        Servico servico1 = new Servico(89, "pintura de casas", "valor por m²");
-        Servico servico2 = new Servico(18, "troca de tomadas antigas por novas", "valor por tomada");
-        portifolio.adicionaServico(servico1, "12345678912");
-        portifolio.adicionaServico(servico2, "12345678912");
+       //
 
-        Prestador prestador2 = new Prestador("Matheus", 34856978, "matheus@gmail.com", "98765432198", portifolio);
-        portifolio.adicionaPrestador(prestador2);
-        Servico servico3 = new Servico(100, "segurança para eventos", "valor por hora");
-        portifolio.adicionaServico(servico3, "98765432198");
-        Servico servico4 = new Servico(20, "buffet para festas", "valor por pessoa, mínimo 100 pessoas");
-        portifolio.adicionaServico(servico4, "98765432198");
-
-        Prestador prestador3 = new Prestador("Giovanni", 34589786, "giovanni@gmail.com", "87654321098", portifolio);
-        portifolio.adicionaPrestador(prestador3);
-        Servico servico5 = new Servico(20, "docinhos para festas", "valor por cento");
-        portifolio.adicionaServico(servico5, "87654321098");
-        Servico servico6 = new Servico(150, "bolo de casamento", "bolo de 3 andares simples");
-        portifolio.adicionaServico(servico6, "87654321098");
-
-        Cliente clienteIndividual1 = new ClienteIndividual("Stella", 987747851, "stellamaris@uol.com.br",
-                "Av. Cristóvao Colombo, 176 - Porto Alegre", "02478945602");
-        portifolio.adicionaClienteIndividual(clienteIndividual1);
-        Cliente clienteIndividual2 = new ClienteIndividual("Marcos", 34568974, "marcostel@bol.com.br",
-                "Rua Maré, 654 - Cachoeirinha", "78945612378");
-        portifolio.adicionaClienteIndividual(clienteIndividual2);
-
-        ClienteEmpresarial clienteEmpresarial1 = new ClienteEmpresarial("Ceumar", "Ceumar Company" ,
-                34568741, "contato@ceumar.com.br", "Av. Farrapos, 566 - Porto Alegre", "12345678901234");
-        portifolio.adicionaClienteEmpresarial(clienteEmpresarial1);
-        ClienteEmpresarial clienteEmpresarial2 = new ClienteEmpresarial("Ana Eventos", "Ana Eventos Company",
-                36547891, "ana.eventos@gmail.com",  "Av Protásio Alves, 789 - Porto Alegre, ", "09876543210987");
-        portifolio.adicionaClienteEmpresarial(clienteEmpresarial2);
-
-        LocalDateTime horario1 = LocalDateTime.of(2020, 10, 12, 14, 30);
-        Contrato contrato1 = new Contrato(89, "Devolução de apartamento, pintura de sala de 10 m²", horario1);
-        contrato1.setDesconto(6.23);
-        contrato1.setValor(contrato1.valor-6.23);
-        portifolio.adicionaContrato(contrato1, servico1, "12345678901234");
-
-        LocalDateTime horario2 = LocalDateTime.of(2021, 01, 01, 22, 00);
-        Contrato contrato2 = new Contrato(20, "Festa de ano novo para 100 pessoas", horario2);
-        contrato2.setDesconto(1.4);
-        contrato2.setValor(contrato2.valor-1.4);
-        portifolio.adicionaContrato(contrato2, servico4, "09876543210987");
-
-        LocalDateTime horario3 = LocalDateTime.of(2021, 02, 15, 19, 30);
-        Contrato contrato3 = new Contrato(20, "Evento empresarial", horario3);
-        portifolio.adicionaContrato(contrato3, servico5, "78945612378");
-
-        LocalDateTime horario4 = LocalDateTime.of(2020, 10, 30, 8, 30);
-        Contrato contrato4 = new Contrato(18, "Troca de 1 tomada", horario4);
-        portifolio.adicionaContrato(contrato4, servico2, "02478945602");
-
-        //
-
+        arquivo.leArquivo(portifolio);
 
         stage=primaryStage;
         primaryStage.setTitle("ACMEJobs");
@@ -160,6 +107,8 @@ public class Main extends Application {
 
         primaryStage.setScene(TelaInicial);
         primaryStage.show();
+
+
     }
 
     public static void changeScreen(String scr){
@@ -217,6 +166,7 @@ public class Main extends Application {
                 break;
             case "TelaPrestadorConfirmarTermino":
                 stage.setScene(TelaPrestadorrrConfirmarTermino);
+
         }
 
     }

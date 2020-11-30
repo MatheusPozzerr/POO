@@ -12,6 +12,7 @@ import Trabalho1.*;
 public class Controller {
 
     Portifolio portifolio= Main.portifolio;
+    Arquivo arquivo = Main.arquivo;
     @FXML
     public Label LabelCpf;
 
@@ -40,7 +41,9 @@ public class Controller {
     public Label LabelAvisos;
 
     public void ClicaSair(){
+        arquivo.salvaDados(portifolio);
         System.exit(0);
+
     }
 
     public void ClicaConfirmar() {

@@ -13,7 +13,13 @@ public class Usuario {
     protected Portifolio portifolio;
     protected final Scanner in = new Scanner(System.in);
 
+    public int getTelefone() {
+        return telefone;
+    }
 
+    public String getEmail() {
+        return email;
+    }
     public Usuario(Portifolio portifolio) {
         this.portifolio = portifolio;
     }

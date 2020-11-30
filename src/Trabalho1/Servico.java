@@ -5,7 +5,7 @@ public class Servico extends Acordo {
     private final String descricao;
 
 
-    public Servico(int valor, String observacao, String descricao) {
+    public Servico(double valor, String observacao, String descricao) {
         super(valor, observacao);
         this.descricao = descricao;
     }
@@ -15,7 +15,7 @@ public class Servico extends Acordo {
     }
 
     public String toString(){
-        return "Valor: " + String.format("%.2f", valor) + " ; Descricao: " + descricao + " ; Observacao: " + observacao + ".";
+        return "" + prestadorArquivo() + ";" + descricao + ";" + valor +";"+ observacao;
     }
 
 }

@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 public class ControllerTelaPrestador {
 
     Portifolio portifolio= Main.portifolio;
+    Arquivo arquivo = Main.arquivo;
 
     @FXML
     public Label LabelCpf;
@@ -51,6 +52,8 @@ public class ControllerTelaPrestador {
 
 
     public void ClicaSair(){
+
+        arquivo.salvaDados(portifolio);
         System.exit(0);
     }
 

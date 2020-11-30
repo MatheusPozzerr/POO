@@ -17,6 +17,24 @@ public class Portifolio {
     private ArrayList<Contrato> ContratosTerminados;
     private ArrayList<Contrato> ContratosPagos;
 
+    public ArrayList<Contrato> getContratosPagos() {
+        return ContratosPagos;
+    }
+    @Override
+    public String toString() {
+        String listaPrestadores = prestadores.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+        String listaClientesEmpresariais = clientesEmpresariais.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+        String listaClientesIndividuais = clientesIndividuais.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+        String listaServicos = servicos.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+        String listaContratosPendentes = contratos.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+        String listaContratosConfirmados = contratosConfirmado.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+        String listaContratosCancelados = ContratosCancelados.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+        String listaContratosTerminados = ContratosTerminados.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+        return "[CLIENTEEMPRESARIAL]\n" + listaClientesEmpresariais +
+                "\n\n[CLIENTEINDIVIDUAL]\n" + listaClientesIndividuais +
+                "\n\n[PRESTADOR]\n" + listaPrestadores ;
+        //"\n[SERVICO]\n" + listaServicos;
+        }
     public Portifolio() {
         this.clientesEmpresariais = new ArrayList<>();
         this.clientesIndividuais = new ArrayList<>();

@@ -49,6 +49,9 @@ public class Contrato extends Acordo {
     public Cliente getCliente() {
         return cliente;
     }
+    public String getCPFCliente() {
+        return cliente.getCpfOuCnpj();
+    }
 
     public Servico getServico() {
         return servico;
@@ -62,6 +65,8 @@ public class Contrato extends Acordo {
     public String toString(){
         return "Valor: " + String.format("%.2f", valor) + " ; Desconto: " + String.format("%.2f", desconto) + " ; Observação: " + observacao + " ; Data e horário: " + dataEHora +  ".";
     }
-
+    public String toStringArquivo(){
+        return "" +dataEHora + ";" +valor+";"+ observacao ;
+    }
 }
 

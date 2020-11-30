@@ -33,6 +33,10 @@ public abstract class Acordo {
         return prestador;
     }
 
+    public String prestadorArquivo() {
+        return prestador.getCpf();
+    }
+
     public String getObservacao() {
         return observacao;
     }

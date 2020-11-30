@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 import Trabalho1.*;
 
 public class ControllerTelaAdministrador {
-
+    Arquivo arquivo = Main.arquivo;
     Portifolio portifolio= Main.portifolio;
 
     @FXML
@@ -76,6 +76,8 @@ public class ControllerTelaAdministrador {
     }
 
     public void ClicaSair(){
+
+        arquivo.salvaDados(portifolio);
         System.exit(0);
     }
 
