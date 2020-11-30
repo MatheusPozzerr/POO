@@ -47,31 +47,32 @@ public class Controller {
     }
 
     public void ClicaConfirmar() {
-        boolean verificacpf=true;
+        boolean verificacpf = false;
         String cpf = TextCPF.getText();
+
         if (Selecionar.getText().equals("Selecionar")) {
             LabelAvisos.setText("Escolha alguma opcao no MenuButton.");
             LabelAvisos.setTextFill(Color.FIREBRICK);
         }
+
         if (Selecionar.getText().equals("Prestador")) {
-            if(TextCPF.getText()!= null) {
+            if(!TextCPF.getText().equals("")) {
                 cpf = TextCPF.getText();
                 if (!VerificaDigitosCpfOuCnpj(cpf) || cpf.length() != 11) {
                     LabelAvisos.setText("Erro: Cpf Invalido");
                     LabelAvisos.setTextFill(Color.FIREBRICK);
-                } else {
-                    verificacpf = false;
-                    if (portifolio != null) {
-                        for (Prestador prestadore : portifolio.getPrestadores()) {
-                            if (cpf.equals(prestadore.getCpf())) {
-                                Main.changeScreen("TelaPrestador");
-                                verificacpf = false;
-                                break;
-                            }
-                            verificacpf = false;
+                }
+                else if (portifolio != null){
+                    for (Prestador prestadore : portifolio.getPrestadores()) {
+                        if (cpf.equals(prestadore.getCpf())) {
+                            LabelAvisos.setText("");
+                            Main.prestadorGlobal = prestadore;
+                            verificacpf = true;
+                            Main.changeScreen("TelaPrestador");
+                            break;
                         }
                     }
-                    if (verificacpf == false) {
+                    if (!verificacpf) {
                         LabelAvisos.setText("Erro: Cpf não cadastrado.");
                         LabelAvisos.setTextFill(Color.FIREBRICK);
                     }
@@ -82,11 +83,14 @@ public class Controller {
                 LabelAvisos.setTextFill(Color.FIREBRICK);
             }
         }
+
         if (Selecionar.getText().equals("Atendente")){
+            LabelAvisos.setText("");
             Main.changeScreen("TelaAtendente");
         }
 
         if (Selecionar.getText().equals("Administrador")){
+            LabelAvisos.setText("");
             Main.changeScreen("TelaAdministrador");
         }
     }
@@ -112,17 +116,17 @@ public class Controller {
         Main.usuario = Main.login.usr_admin;
     }
 
-            public static boolean VerificaDigitosCpfOuCnpj(String cpfOuCnpj){
-                char[] c = cpfOuCnpj.toCharArray();
-                boolean d = true;
+    public static boolean VerificaDigitosCpfOuCnpj(String cpfOuCnpj){
+        char[] c = cpfOuCnpj.toCharArray();
+        boolean d = true;
 
-                for (char value : c) {
+        for (char value : c) {
 
-                    if (!Character.isDigit(value)) {
-                        System.out.println("Erro: não é um digito");
-                        return false;
-                    }
-                }
-                return true;
+            if (!Character.isDigit(value)) {
+                System.out.println("Erro: não é um digito");
+                return false;
             }
+        }
+        return true;
+    }
 }
