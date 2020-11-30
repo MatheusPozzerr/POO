@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerCadastrarCliente">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label minWidth="-Infinity" text="Cadastro Cliente" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="60.0" />
+         </GridPane.margin>
+      </Label>
+      <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#clicaConfirmar" text="Confirmar" GridPane.columnIndex="5" GridPane.rowIndex="9">
+         <GridPane.margin>
+            <Insets left="50.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#LimpaBotao" text="Limpa" GridPane.columnIndex="7" GridPane.rowIndex="9">
+         <GridPane.margin>
+            <Insets left="3.0" />
+         </GridPane.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#ClicaVoltar" text="Voltar" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+      <Label minWidth="-Infinity" text="Selecione o tipo de cliente que deseja cadastrar:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <MenuButton fx:id="Selecionar" minWidth="-Infinity" mnemonicParsing="false" text="Selecionar" GridPane.columnIndex="5" GridPane.rowIndex="2">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#Cliente" text="Cliente Individual" />
+          <MenuItem mnemonicParsing="false" onAction="#ClienteEmpresarial" text="Cliente Empresarial" />
+        </items>
+      </MenuButton>
+      <Label fx:id="labelNome" disable="true" text="Nome:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label fx:id="labelTelefone" disable="true" text="Telefone:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label fx:id="labelEmail" disable="true" text="E-mail:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label fx:id="labelEndereco" disable="true" text="Endereco:" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <TextField fx:id="nomeTextField" disable="true" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <TextField fx:id="telefoneTextField" disable="true" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <TextField fx:id="emailTextField" disable="true" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <TextField fx:id="enderecoTextField" disable="true" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+      <Label fx:id="labelNomeFantasia" disable="true" minWidth="-Infinity" text="NomeFantasia:" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+      <TextField fx:id="nomeFantasiaTextField" disable="true" minWidth="-Infinity" GridPane.columnIndex="6" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="30.0" />
+         </GridPane.margin>
+      </TextField>
+      <Label fx:id="labelCpf" disable="true" text="Cpf:" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <TextField fx:id="cpfTextField" disable="true" minWidth="-Infinity" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+      <Label fx:id="LabelAvisos" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+   </children>
+</GridPane>

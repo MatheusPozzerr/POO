@@ -8,14 +8,20 @@ public class Contrato extends Acordo {
     private final LocalDateTime dataEHora;
     private Cliente cliente;
     private Servico servico;
+    private double qtdDesconto;
+    private final double valorinicial;
 
 
     public Contrato(double valor, String observacao, LocalDateTime horaEData) {
         super(valor, observacao);
         this.dataEHora = horaEData;
         desconto = 0;
+        valorinicial=valor;
     }
 
+    public double getValorInicial(){
+        return valorinicial;
+    }
 
     public void setDesconto(double desconto) {
         this.desconto += desconto;
@@ -29,6 +35,12 @@ public class Contrato extends Acordo {
         this.servico = servico;
     }
 
+    public void setQtdDesconto(double qtd){
+        this.qtdDesconto=qtd;
+    }
+    public double getQtdDesconto() {
+        return qtdDesconto;
+    }
 
     public double getDesconto() {
         return desconto;

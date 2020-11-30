@@ -157,9 +157,8 @@ public class Prestador extends Usuario {
     public String consultarServicosContratados() {
         StringBuilder contratados = new StringBuilder();
         for (Contrato contrato : servicosContratados) {
-            contratados.append("Contrato: ").append(contrato.toString()).append("\n")
-                    .append("Servico contratado: ").append(contrato.getServico().toString()).append("\n")
-                    .append("Contratante: ").append(contrato.getCliente().toString()).append("\n");
+            contratados.append("Servico contratado: ").append(contrato.getServico().toString()).append("\n")
+           .append("Contrato: ").append(contrato.toString()).append("\n");
         }
         if(contratados.length() == 0) {
             return "Nenhum serviço contratado.";
