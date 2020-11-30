@@ -92,18 +92,21 @@ public class Controller {
         Selecionar.setText("Atendente");
         LabelCpf.setVisible(false);
         TextCPF.setVisible(false);
+        Main.usuario = Main.login.usr_atendente;
     }
 
     public void SelecionaPrestador(){
         Selecionar.setText("Prestador");
         LabelCpf.setVisible(true);
         TextCPF.setVisible(true);
+        Main.usuario = Main.login.usr_prestador;
     }
 
     public void SelecionaAdminsitracao(){
         Selecionar.setText("Administrador");
         LabelCpf.setVisible(false);
         TextCPF.setVisible(false);
+        Main.usuario = Main.login.usr_admin;
     }
 
             public static boolean VerificaDigitosCpfOuCnpj(String cpfOuCnpj){

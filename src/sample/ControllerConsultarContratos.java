@@ -13,7 +13,13 @@ public class ControllerConsultarContratos {
 
     public void ClicaVoltar(){
         labelTexto.setText("");
-        Main.changeScreen("TelaAdministrador");
+        if(Main.usuario.equals(Main.login.usr_admin)) {
+            Main.changeScreen("TelaAdministrador");
+        } else if(Main.usuario.equals(Main.login.usr_atendente)){
+            Main.changeScreen("TelaAtendente");
+        } else {
+            Main.changeScreen("TelaPrestador");
+        }
     }
 
     public void ClicaMostrar() {

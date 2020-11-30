@@ -43,7 +43,14 @@ public class ControllerCadastrarCliente {
 
 
     public void ClicaVoltar(){
-        Main.changeScreen("TelaAdministrador");
+        LimpaBotao();
+        if(Main.usuario.equals(Main.login.usr_admin)) {
+            Main.changeScreen("TelaAdministrador");
+        } else if(Main.usuario.equals(Main.login.usr_atendente)){
+            Main.changeScreen("TelaAtendente");
+        } else {
+            Main.changeScreen("TelaPrestador");
+        }
     }
 
     public void LimpaBotao(){
