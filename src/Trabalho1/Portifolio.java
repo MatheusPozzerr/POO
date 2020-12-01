@@ -25,15 +25,26 @@ public class Portifolio {
         String listaPrestadores = prestadores.toString().replace("[", "").replace("]", "").replace(", ", "\n");
         String listaClientesEmpresariais = clientesEmpresariais.toString().replace("[", "").replace("]", "").replace(", ", "\n");
         String listaClientesIndividuais = clientesIndividuais.toString().replace("[", "").replace("]", "").replace(", ", "\n");
-        String listaServicos = servicos.toString().replace("[", "").replace("]", "").replace(", ", "\n");
-        String listaContratosPendentes = contratos.toString().replace("[", "").replace("]", "").replace(", ", "\n");
-        String listaContratosConfirmados = contratosConfirmado.toString().replace("[", "").replace("]", "").replace(", ", "\n");
-        String listaContratosCancelados = ContratosCancelados.toString().replace("[", "").replace("]", "").replace(", ", "\n");
-        String listaContratosTerminados = ContratosTerminados.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+
         return "[CLIENTEEMPRESARIAL]\n" + listaClientesEmpresariais +
                 "\n\n[CLIENTEINDIVIDUAL]\n" + listaClientesIndividuais +
                 "\n\n[PRESTADOR]\n" + listaPrestadores ;
         //"\n[SERVICO]\n" + listaServicos;
+        }
+        public String retornaTrace(){
+            String listaServicos = servicos.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+            String listaContratosPendentes = contratosContratados.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+            String listaContratosConfirmados = contratosConfirmado.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+            String listaContratosCancelados = ContratosCancelados.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+            String listaContratosTerminados = ContratosTerminados.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+            String listaContratosPagos = ContratosPagos.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+             return "\n[SERVICO]" + listaServicos +
+                    "\n[CONTRATO]" + listaContratosPendentes +
+                    "\n[CONTRATOCONFIRMADO]" + listaContratosConfirmados +
+                    "\n[CONTRATOCANCELADO]" + listaContratosCancelados +
+                    "\n[CONTRATOTERMINADO]" + listaContratosTerminados +
+                    "\n[CONTRATOPAGO]" + listaContratosPagos;
+
         }
     public Portifolio() {
         this.clientesEmpresariais = new ArrayList<>();

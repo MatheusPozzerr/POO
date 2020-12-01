@@ -162,7 +162,7 @@ public class Arquivo {
                         String[] stringEditada = line.trim().split(";");
                         double valor = Double.parseDouble(stringEditada[3].replace(",", "."));
                         servico = new Servico(valor, stringEditada[4],stringEditada[2]);
-                        portifolio.adicionaServico(servico, stringEditada[0].replace(".", "").replace("-", ""));
+                        portifolio.adicionaServico(servico, stringEditada[1].replace(".", "").replace("-", ""));
                         catalogo.put(Integer.parseInt(stringEditada[0]), servico);
                         line = reader.readLine();
                         if (line == null){
@@ -192,6 +192,7 @@ public class Arquivo {
                                 agendamento);// cnpj
                         traceContratos.push(contrato);
                         portifolio.adicionaContrato(traceContratos.get(index), catalogo.get(identificador),cpfOuCnpj );
+                        portifolio.removeContratoContratados(contrato);
                         line = reader.readLine();
                         index++;
                         if (line == null){

@@ -5,6 +5,7 @@ import Trabalho1.Portifolio;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -27,7 +28,8 @@ public class ControllerTrace {
 
     @FXML
     public Label EntradaArquivo;
-
+    @FXML
+    public ScrollBar scrollBar;
     @FXML
     public TextField TextPath;
 
@@ -35,7 +37,14 @@ public class ControllerTrace {
         if (!TextPath.getText().equals("")){
             String path = TextPath.getText();
             if (arquivo.leDados(path).equals("OK")){
-                LabelAvisos.setText("ok");
+
+                LabelAvisos.setText("Arquivo lido...\n" +
+                        "Dados adicionados...\n" +
+                        "Contratos empilhados...\n"+
+                        "Contratos Confirmados\n"+
+                        portifolio.toString() +
+                        portifolio.retornaTrace());
+
             }
             else{
                 LabelAvisos.setText("Caminho inválido");

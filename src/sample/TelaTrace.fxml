@@ -9,13 +9,12 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="250.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerTrace">
    <children>
-      <GridPane prefHeight="400.0" prefWidth="600.0">
+      <GridPane prefHeight="337.0" prefWidth="600.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -23,8 +22,10 @@
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="82.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="277.0" minHeight="10.0" prefHeight="277.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="71.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label prefHeight="44.0" prefWidth="205.0" text="Trace" GridPane.columnIndex="1">
@@ -32,15 +33,15 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="Titulo" minWidth="-Infinity" text="Insira o local do arquivo a ser lido:" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="Titulo" minWidth="-Infinity" prefHeight="20.0" prefWidth="237.0" text="Insira o local do arquivo a ser lido:" GridPane.rowIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="TextPath" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="BotaoConfirmar" mnemonicParsing="false" onAction="#ClicaConfirmar" text="Confirmar" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Button fx:id="BotaoVoltar" mnemonicParsing="false" onAction="#ClicaVoltar" text="Voltar" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Label fx:id="LabelAvisos" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="TextPath" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="BotaoConfirmar" mnemonicParsing="false" onAction="#ClicaConfirmar" text="Confirmar" GridPane.columnIndex="3" />
+            <Button fx:id="BotaoVoltar" mnemonicParsing="false" onAction="#ClicaVoltar" text="Voltar" GridPane.columnIndex="4" />
+            <Label fx:id="LabelAvisos" accessibleRole="SCROLL_PANE" centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="274.0" prefWidth="600.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.rowSpan="2147483647" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
                <font>
                   <Font size="14.0" />
                </font>
