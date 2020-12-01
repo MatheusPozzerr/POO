@@ -18,7 +18,8 @@ public class Prestador extends Usuario {
     }
     @Override
     public String toString() {
-        return "" + getNome() + ";" + getNome() + ";" + getTelefone()+ ";" +getEmail() ;
+        System.out.println(getCpf());
+        return "" + getCpf() + ";" + getNome() + ";" + getTelefone()+ ";" +getEmail() + "\n";
     }
 
     public boolean adicionaServico(Servico Servico) {

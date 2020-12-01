@@ -15,7 +15,7 @@ public class ClienteIndividual extends Cliente {
     }
 
     public String toString(){
-        return "" + cpf + ";"+ nome +";" + telefone + ";" + email+ ";" + endereco ;
+        return "" + cpf + ";"+ nome +";" + telefone + ";" + email+ ";" + endereco +"\n";
     }
 
 }

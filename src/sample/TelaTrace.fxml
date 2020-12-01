@@ -33,8 +33,11 @@
                <font>
                   <Font size="14.0" />
                </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
             </Label>
-            <TextField fx:id="TextPath" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField fx:id="TextPath" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <ScrollPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="477.0" GridPane.rowIndex="3">
                <content>
                 <AnchorPane minHeight="-Infinity" minWidth="-Infinity">

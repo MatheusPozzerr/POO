@@ -22,13 +22,13 @@ public class Portifolio {
     }
     @Override
     public String toString() {
-        String listaPrestadores = prestadores.toString().replace("[", "").replace("]", "").replace(", ", "\n");
-        String listaClientesEmpresariais = clientesEmpresariais.toString().replace("[", "").replace("]", "").replace(", ", "\n");
-        String listaClientesIndividuais = clientesIndividuais.toString().replace("[", "").replace("]", "").replace(", ", "\n");
+        String listaPrestadores = prestadores.toString().replace("[", "").replace("]", "").replace(", ", "");
+        String listaClientesEmpresariais = clientesEmpresariais.toString().replace("[", "").replace("]", "").replace(", ", "");
+        String listaClientesIndividuais = clientesIndividuais.toString().replace("[", "").replace("]", "").replace(", ", "");
 
         return "[CLIENTEEMPRESARIAL]\n" + listaClientesEmpresariais +
-                "\n\n[CLIENTEINDIVIDUAL]\n" + listaClientesIndividuais +
-                "\n\n[PRESTADOR]\n" + listaPrestadores ;
+                "\n[CLIENTEINDIVIDUAL]\n" + listaClientesIndividuais +
+                "\n[PRESTADOR]\n" + listaPrestadores ;
         //"\n[SERVICO]\n" + listaServicos;
         }
         public String retornaTrace(){
@@ -38,12 +38,12 @@ public class Portifolio {
             String listaContratosCancelados = ContratosCancelados.toString().replace("[", "").replace("]", "").replace(", ", "\n");
             String listaContratosTerminados = ContratosTerminados.toString().replace("[", "").replace("]", "").replace(", ", "\n");
             String listaContratosPagos = ContratosPagos.toString().replace("[", "").replace("]", "").replace(", ", "\n");
-             return "\n[SERVICO]" + listaServicos +
-                    "\n[CONTRATO]" + listaContratosPendentes +
-                    "\n[CONTRATOCONFIRMADO]" + listaContratosConfirmados +
-                    "\n[CONTRATOCANCELADO]" + listaContratosCancelados +
-                    "\n[CONTRATOTERMINADO]" + listaContratosTerminados +
-                    "\n[CONTRATOPAGO]" + listaContratosPagos;
+             return "\n\n[SERVICO]\n" + listaServicos +
+                    "\n\n[CONTRATO]\n" + listaContratosPendentes +
+                    "\n\n[CONTRATOCONFIRMADO]\n" + listaContratosConfirmados +
+                    "\n\n[CONTRATOCANCELADO]\n" + listaContratosCancelados +
+                    "\n\n[CONTRATOTERMINADO]\n" + listaContratosTerminados +
+                    "\n\n[CONTRATOPAGO]\n" + listaContratosPagos;
 
         }
     public Portifolio() {

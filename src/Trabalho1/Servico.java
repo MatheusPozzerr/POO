@@ -15,7 +15,7 @@ public class Servico extends Acordo {
     }
 
     public String toString(){
-        return "" +  descricao + ";" + valor +";"+ observacao;
+        return ""+ getPrestador().getCpf() +";"+  descricao + ";" + valor +";"+ observacao;
     }
 
 }

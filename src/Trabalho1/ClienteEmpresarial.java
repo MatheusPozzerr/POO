@@ -22,7 +22,7 @@ public class ClienteEmpresarial extends Cliente {
     }
 
     public String toString(){
-        return "" + cnpj +";" + nome + ";" + telefone + ";" + email + ";" + endereco + ";" + nomeFantasia;
+        return "" + cnpj +";" + nome + ";" + telefone + ";" + email + ";" + endereco + ";" + nomeFantasia+"\n";
     }
 
 }
