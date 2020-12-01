@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import Trabalho1.*;
 
-import java.time.LocalDateTime;
-
 public class Main extends Application {
 
     public static Stage stage;
@@ -30,8 +28,9 @@ public class Main extends Application {
     public static Scene TelaTerminoContrato;
     public static Scene TelaPrestadorConsultaContratos;
     public static Scene TelaPrestadorrrConfirmarTermino;
+    public static Scene TelaTraceAdm;
 
-	// Variavel estatica, usada em toda a aplicacao
+    // Variavel estatica, usada em toda a aplicacao
     public static enum login {
         usr_atendente,
         usr_prestador,
@@ -105,6 +104,9 @@ public class Main extends Application {
         Parent fxmlPrestadorConfirmarTermino= FXMLLoader.load(getClass().getResource("TelaPrestadorConfirmarTermino.fxml"));
         TelaPrestadorrrConfirmarTermino =new Scene(fxmlPrestadorConfirmarTermino,640,480);
 
+        Parent fxmlTrace = FXMLLoader.load(getClass().getResource("TelaTrace.fxml"));
+        TelaTraceAdm = new Scene(fxmlTrace,640,480);
+
         primaryStage.setScene(TelaInicial);
         primaryStage.show();
 
@@ -166,7 +168,9 @@ public class Main extends Application {
                 break;
             case "TelaPrestadorConfirmarTermino":
                 stage.setScene(TelaPrestadorrrConfirmarTermino);
-
+                break;
+            case "TelaTrace":
+                stage.setScene(TelaTraceAdm);
         }
 
     }

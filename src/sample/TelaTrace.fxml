@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="250.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerTrace">
+   <children>
+      <GridPane prefHeight="400.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="44.0" prefWidth="205.0" text="Trace" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="Titulo" minWidth="-Infinity" text="Insira o local do arquivo a ser lido:" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TextPath" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="BotaoConfirmar" mnemonicParsing="false" onAction="#ClicaConfirmar" text="Confirmar" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button fx:id="BotaoVoltar" mnemonicParsing="false" onAction="#ClicaVoltar" text="Voltar" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label fx:id="LabelAvisos" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,31 @@
+//Experimento: Teste com carga media
+//Prestador: CPF;nome;telefone;e-mail
+[PRESTADOR]
+467.572.270-96;Pedro da Silva;1111-1111;pedro.silva@jemail.com
+185.493.770-74;Maria de Souza;2222-2222;maria.souza@jemail.com
+
+// Cliente individual: CPF;nome;telefone;e-mail;endereco
+[CLIENTEINDIVIDUAL]
+742.894.950-52;Iara Pereira;5555-5555;joaopereira@coldmail.com;Av. Ipiranga,5555
+072.290.880-62;Marco Souza;6666-6666;joanasouza@coldmail.com;R. 7 de Setembro, 6666
+
+// Cliente empresarial: CNPJ;nome;telefone;e-mail;endereco;nome fantasia
+[CLIENTEEMPRESARIAL]
+80.424.798/0001-38;E-corp ACME;7777-7777;contact@acmecorp.com;R. Papa Leguas, 7777;Quality, we have
+59.933.309/0001-87;HAL Computers;8888-8888;hal9000@halcomputers.com;R. IBM, 2001;AI is us
+
+// Serviço: codigo do servico;CPF (do prestador);descricao;valor;observacao
+[SERVICO]
+1;467.572.270-96;Limpeza de vidro;20,00;Valor por metro quadrado
+2;467.572.270-96;Limpeza de chão;100,00;Valor por hora
+3;185.493.770-74;Imposto de renda;109,95;Por hora de trabalho
+4;185.493.770-74;Fechamento de caixa;119,55;Por hora de trabalho
+
+// Contrato: codigo do contrato;tipo do cliente (1-individual, 2-empresarial);CPF ou CNPJ do cliente
+//;codigo do servico;data;hora;valor;observacao
+[CONTRATO]
+1;1;742.894.950-52;1;11/11/2020;11:11;100,00;Mandar e-mail antes de ir ao local
+2;2;80.424.798/0001-38;2;12/12/2020;12:12;1500,00;Esperar o coiote falhar
+3;2;80.424.798/0001-38;1;02/02/2021;02:02;2000,00;Telefonar na vespera
+4;1;072.290.880-62;3;03/03/2021;03:03;300,00;Contatar pelo celular
+5;2;59.933.309/0001-87;3;04/04/2021;04:04;4000,00;-

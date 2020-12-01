@@ -1,5 +1,6 @@
 package Trabalho1;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import sample.Main;
 
@@ -14,9 +15,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
+import java.util.Stack;
 
 public class Arquivo {
-
+    private Stack <Contrato> traceContratos = new Stack<>();
     private Prestador prestador;
     private ClienteIndividual clienteIndividual;
     private ClienteEmpresarial clienteEmpresarial;
@@ -94,12 +96,12 @@ public class Arquivo {
         }
     }
 
-    public void leDados(TextField text){
+    public String leDados(String text){
 
-        String caminho = text.getText();
-        Path ADMpath = Paths.get(caminho);
+
+        Path ADMpath = Paths.get(text);
         try (BufferedReader reader = java.nio.file.Files.newBufferedReader(ADMpath, Charset.defaultCharset())) {
-            String line;
+            String line = reader.readLine();
             while((line = reader.readLine()) != null){
                 if (line.equals("[PRESTADOR]")) {
                     line = reader.readLine();
@@ -107,7 +109,7 @@ public class Arquivo {
 
                         String[] stringEditada = line.trim().split(";");
                         prestador = new Prestador(stringEditada[1], //nome
-                                Integer.parseInt((stringEditada[2].replace("-", ""))), //telefone
+                                Integer.parseInt((stringEditada[2].replace("-", ""))), //
                                 stringEditada[3],
                                 stringEditada[0].replace(".", "").replace("-", "")); // email
                         portifolio.adicionaPrestador(prestador);
@@ -159,9 +161,7 @@ public class Arquivo {
 
                         String[] stringEditada = line.trim().split(";");
                         double valor = Double.parseDouble(stringEditada[3].replace(",", "."));
-                        servico = new Servico(valor, //valor
-                                stringEditada[4], //observacaostringEditada[3], //email
-                                stringEditada[2]);// cnpj
+                        servico = new Servico(valor, stringEditada[4],stringEditada[2]);
                         portifolio.adicionaServico(servico, stringEditada[0].replace(".", "").replace("-", ""));
                         catalogo.put(Integer.parseInt(stringEditada[0]), servico);
                         line = reader.readLine();
@@ -172,7 +172,7 @@ public class Arquivo {
                 }
                 else if (line.equals("[CONTRATO]")){
                     line = reader.readLine();
-
+                    int index = 0;
                     while(line.length() >0){
                         String[] stringEditada = line.trim().split(";");
                         int identificador = Integer.parseInt(stringEditada[3]);
@@ -186,22 +186,27 @@ public class Arquivo {
                                 Integer.parseInt(horario[0]), //hora
                                 Integer.parseInt(horario[1])
                         );
+
                         contrato = new Contrato(valor, //valor
                                 stringEditada[7], //observacao
                                 agendamento);// cnpj
-
-                        portifolio.adicionaContrato(contrato, catalogo.get(identificador),cpfOuCnpj );
+                        traceContratos.push(contrato);
+                        portifolio.adicionaContrato(traceContratos.get(index), catalogo.get(identificador),cpfOuCnpj );
                         line = reader.readLine();
+                        index++;
                         if (line == null){
                             break;
                         }
                     }
+
                 }
 
             }
+            reader.close();
+            return "OK";
         }
         catch (IOException e) {
-            System.err.println("Caminho inválido, tente novamente");
+            return "N";
         }
 
     }
@@ -429,6 +434,7 @@ public class Arquivo {
 
                 }
             }
+            reader2.close();
         }catch (IOException e){
 
         }

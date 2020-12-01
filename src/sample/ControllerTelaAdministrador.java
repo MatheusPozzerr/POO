@@ -72,6 +72,9 @@ public class ControllerTelaAdministrador {
         if (Servicos.getText().equals("Confirmar Termino de Servico")){
             Main.changeScreen("TelaConfirmarTermino");
         }
+        if(Servicos.getText().equals("Realizar Simulacao")){
+            Main.changeScreen("TelaTrace");
+        }
 
     }
 

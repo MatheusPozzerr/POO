@@ -14,28 +14,28 @@
 45685214562;teste;12345678;teste
 
 [SERVICO]
-87654321098;bolo de 3 andares simples;150.0;bolo de casamento;8
-98765432198;valor por hora;100.0;segurança para eventos;3
-12345678912;troca de tomadas antigas por novas;18.0;valor por tomada;9
-87654321098;valor por cento;20.0;docinhos para festas;10
+12345678912;pintura de casas;89.0;valor por m²;1
+98765432198;valor por pessoa,mínimo 100 pessoas;20.0;buffet para festas;8
+98765432198;valor por hora;100.0;segurança para eventos;4
+87654321098;docinhos para festas;20.0;valor por cento;5
+12345678912;valor por m²;89.0;pintura de casas;12
 98765432198;buffet para festas;20.0;valor por pessoa,mínimo 100 pessoas;2
-12345678912;valor por m²;89.0;pintura de casas;4
-98765432198;valor por pessoa,mínimo 100 pessoas;20.0;buffet para festas;6
-87654321098;bolo de casamento;150.0;bolo de 3 andares simples;12
-98765432198;segurança para eventos;100.0;valor por hora;1
-87654321098;docinhos para festas;20.0;valor por cento;11
-12345678912;valor por tomada;18.0;troca de tomadas antigas por novas;5
-12345678912;pintura de casas;89.0;valor por m²;7
+12345678912;valor por tomada;18.0;troca de tomadas antigas por novas;11
+87654321098;bolo de casamento;150.0;bolo de 3 andares simples;6
+98765432198;segurança para eventos;100.0;valor por hora;10
+87654321098;bolo de 3 andares simples;150.0;bolo de casamento;3
+12345678912;troca de tomadas antigas por novas;18.0;valor por tomada;9
+87654321098;valor por cento;20.0;docinhos para festas;7
 
 [CONTRATO]
-1;12345678901234;7;2020-10-12T14:30;82.77;Devolução de apartamento,pintura de sala de 10 m²
-2;09876543210987;2;2021-01-01T22:00;18.6;Festa de ano novo para 100 pessoas
-3;78945612378;11;2021-02-15T19:30;20.0;Evento empresarial
-4;02478945602;9;2020-10-30T08:30;18.0;Troca de 1 tomada
-5;12345678901234;4;2020-10-12T14:30;82.77;Devolução de apartamento,pintura de sala de 10 m²
-6;09876543210987;6;2021-01-01T22:00;18.6;Festa de ano novo para 100 pessoas
-7;78945612378;10;2021-02-15T19:30;20.0;Evento empresarial
-8;02478945602;5;2020-10-30T08:30;18.0;Troca de 1 tomada
+1;12345678901234;12;2020-10-12T14:30;82.77;Devolução de apartamento,pintura de sala de 10 m²
+2;09876543210987;8;2021-01-01T22:00;18.6;Festa de ano novo para 100 pessoas
+3;78945612378;7;2021-02-15T19:30;20.0;Evento empresarial
+4;02478945602;11;2020-10-30T08:30;18.0;Troca de 1 tomada
+5;12345678901234;1;2020-10-12T14:30;82.77;Devolução de apartamento,pintura de sala de 10 m²
+6;09876543210987;2;2021-01-01T22:00;18.6;Festa de ano novo para 100 pessoas
+7;78945612378;5;2021-02-15T19:30;20.0;Evento empresarial
+8;02478945602;9;2020-10-30T08:30;18.0;Troca de 1 tomada
 
 [CONTRATOCONFIRMADO]
 
