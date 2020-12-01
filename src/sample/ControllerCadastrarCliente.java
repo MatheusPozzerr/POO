@@ -43,6 +43,7 @@ public class ControllerCadastrarCliente {
 
 
     public void ClicaVoltar(){
+        LabelAvisos.setText("");
         LimpaBotao();
         if(Main.usuario.equals(Main.login.usr_admin)) {
             Main.changeScreen("TelaAdministrador");

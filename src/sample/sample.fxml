@@ -60,7 +60,7 @@
                   <Insets left="30.0" />
                </GridPane.margin></Button>
             <Button fx:id="BotaoSair" mnemonicParsing="false" onAction="#ClicaSair" text="Sair" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
-            <TextField fx:id="TextCPF" minWidth="-Infinity" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField fx:id="TextCPF" minWidth="-Infinity" onAction="#ClicaConfirmar" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4" />
             <Label fx:id="LabelCpf" minWidth="-Infinity" text="CPF Prestador:" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label fx:id="LabelAvisos" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>

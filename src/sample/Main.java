@@ -39,8 +39,12 @@ public class Main extends Application {
     }
     public static login usuario = login.usr_deslogado;
 
-    public static Portifolio portifolio=new Portifolio();
-    public static Arquivo arquivo=new Arquivo();
+    public static Portifolio portifolio = new Portifolio();
+
+    public static Arquivo arquivo = new Arquivo();
+
+    public static Prestador prestadorGlobal;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
        //

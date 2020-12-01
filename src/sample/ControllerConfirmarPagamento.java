@@ -31,6 +31,7 @@ public class ControllerConfirmarPagamento {
 
 
     public void ClicaVoltar(){
+        LabelAvisos.setText("");
         cpfTextField.setText("");
         if(Main.usuario.equals(Main.login.usr_admin)) {
             Main.changeScreen("TelaAdministrador");

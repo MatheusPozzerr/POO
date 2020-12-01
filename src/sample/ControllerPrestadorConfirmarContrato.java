@@ -42,6 +42,7 @@ public class ControllerPrestadorConfirmarContrato implements Initializable {
     private List<Contrato> contratos = new ArrayList<>();
 
     public void ClicaVoltar(){
+        LabelAvisos.setText("");
         Main.changeScreen("TelaPrestador");
     }
 

@@ -50,6 +50,7 @@ public class ControllerConfirmarCancelarContrato implements Initializable{
     }
 
     public void ClicaVoltar(){
+        LabelAvisos.setText("");
         Main.changeScreen("TelaAdministrador");
     }
 
